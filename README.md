@@ -39,7 +39,7 @@ I opted to keep it in since it in reality, age should play a factor in developin
 After the initial data exploration, I went into trying to model the data. First I split the data into training and testing sets using stratified sampling so no features 
 were underrepresented in the sets. 
 
-I focused on optimizing a Logistic Regression model since in the medical field interpretability is king, but I also tried a few other models such as XGBoost and Random Forest.
+I focused on optimizing a **Logistic Regression** model since in the medical field interpretability is king, but I also tried a few other models such as *XGBoost* and *Random Forest*.
 With some fine tuning, the logistic model with regularization performed the best for me. Though I wished I could have looked at the statistic of the model, it was not possible due to the
 Sci-kit Learn's and Statsmodel's limitations for further tuning. 
 
