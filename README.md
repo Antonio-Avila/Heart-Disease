@@ -5,6 +5,10 @@ similar to Kaggle.
 Typically, DrivenData's competitions focus on some of the challenges affecting society in an attempt to find solutions. 
 
 
+I ended up placing 95 out of 3905 competitors, putting me in the top 97.6 percentile, with a score of 0.28975. Not too shaby but could have 
+been better.
+
+
 ## Problem Description
 
 A full description of the project can be found via this [link](https://www.drivendata.org/competitions/54/machine-learning-with-a-heart/page/107/).
@@ -32,7 +36,7 @@ of heart disease. Out of the 13 features, 4 were found to be nonsignificant: res
 There were very small to no differences between the people with heart disease and the people without for the 4 features. Age of the patients was a noteworthy feature.
 I expected the people with heart disease to skew towards the older population but that was not the case.  The groups' ages had similar averages but their distributions
 were slightly different. There was less variability in the people with heart disease; upon further investigation, I found that this was a result of older males developing
-heart disease which made sense since the majority of people with heart disease were males. Thought statistical tests and the models determined that age was insignificant,
+heart disease which made sense since the majority of people with heart disease were males. Though statistical tests and the models determined that age was insignificant,
 I opted to keep it in since it in reality, age should play a factor in developing heart disease.
 
 
@@ -43,3 +47,19 @@ I focused on optimizing a **Logistic Regression** model since in the medical fie
 With some fine tuning, the logistic model with regularization performed the best for me. Though I wished I could have looked at the statistic of the model, it was not possible due to the
 Sci-kit Learn's and Statsmodel's limitations for further tuning. 
 
+My best performing model was a Logistic Regression model regularized using an elastic net with an l1 ratio of 0.1 and a regularization penalty of 1.5, trained only on the training set. 
+Oddly enough, the same model trained on the full data set performed worse on the new data than the model with a subset of the data. This was odd since more data usually increases model
+performance, but perhaps there was something in the testing set that caused the decrease in performance.
+
+## Conclusion and Lessons Learned
+
+- The GridSearchCV function which finds the best parameters for the model has a log loss function that could had helped find a better model given the evaluation metric
+- Done further hypertuning, or instead of using a grid search approach tried a random search or gradient based optimization approach. 
+- Tried a few other models such as Probit, similar to Logit function but uses a different link function
+	- on the downside, it would be less interpritable since it does not give the log odds as Logistic Regression does
+- Performed some error analysis to see where the model broke down or see if there were any discernible patterns in the errors made
+- Perhaps would have used R instead of Python since it is easier to look at the model's statistics, ie, BIC score, coefficient p-values, etc (or at least and nice to have)
+	- couldn't do in Python since the library statsmodel's Logit model is the only Logistic Regression model which provides such values, but it is not very flexible
+	- it only performs l1 regularization (LASSO) and since I was using elastic net regularization, I could not use the library to create a similar model as Sci-kit Learn's Logit model.
+	- no need to worry about this in R (or at least I am better able to maneuver such problems)
+- Model performance changes when introducing new data, in my case for the worse. The same model trained with more data performed worse.
