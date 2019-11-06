@@ -28,6 +28,9 @@ The main challenge resided in how the competition was being scored/evaluated. As
 a patient had heart disease, but the ultimate goal was to predict the probability of a patient having heart disease. Though the probability
 could be predicted given the labels, we had to minimize the log loss function by minimizing the unknown probability values. 
 
+Submissions of the predicitons were limited to 3 a day. They could be used to give an indication of how well the model was actually performing on the "new" data.
+The results posted during the competition were based on a portion of the new data we were meant to predict referred to as the Public Score.
+At the deadline, all submissions would be judged on the entire, new dataset and would result in a private and final score. 
 
 ## Approach
 
@@ -63,3 +66,8 @@ performance, but perhaps there was something in the testing set that caused the 
 	- it only performs l1 regularization (LASSO) and since I was using elastic net regularization, I could not use the library to create a similar model as Sci-kit Learn's Logit model.
 	- no need to worry about this in R (or at least I am better able to maneuver such problems)
 - Model performance changes when introducing new data, in my case for the worse. The same model trained with more data performed worse.
+- Ultimately, I **placed 95 out of 3905** landing me in the **top 4%** of competitors. 
+	- Not bad but could have been better but the grind for shaving off decimal points in error is tough. 
+- Placement was suprising given the initial public score. My best model performed better once graded on the entire data instead of just a portion
+	- model generalized relatively well to new data, which is usually the goal 
+	- never want a model that performs well on the data used to train the model but then performs poorly when introduce to new data
