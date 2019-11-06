@@ -56,6 +56,11 @@ performance, but perhaps there was something in the testing set that caused the 
 
 ## Conclusion and Lessons Learned
 
+- Ultimately, I **placed 95 out of 3905** landing me in the **top 4%** of competitors. 
+	- Not bad but could have been better but the grind for shaving off decimal points in error is tough. 
+- Placement was suprising given the initial public score. My best model performed better once graded on the entire data instead of just a portion
+	- model generalized relatively well to new data, which is usually the goal 
+	- never want a model that performs well on the data used to train the model but then performs poorly when introduce to new data
 - The GridSearchCV function which finds the best parameters for the model has a log loss function that could had helped find a better model given the evaluation metric
 - Done further hypertuning, or instead of using a grid search approach tried a random search or gradient based optimization approach. 
 - Tried a few other models such as Probit, similar to Logit function but uses a different link function
@@ -66,8 +71,3 @@ performance, but perhaps there was something in the testing set that caused the 
 	- it only performs l1 regularization (LASSO) and since I was using elastic net regularization, I could not use the library to create a similar model as Sci-kit Learn's Logit model.
 	- no need to worry about this in R (or at least I am better able to maneuver such problems)
 - Model performance changes when introducing new data, in my case for the worse. The same model trained with more data performed worse.
-- Ultimately, I **placed 95 out of 3905** landing me in the **top 4%** of competitors. 
-	- Not bad but could have been better but the grind for shaving off decimal points in error is tough. 
-- Placement was suprising given the initial public score. My best model performed better once graded on the entire data instead of just a portion
-	- model generalized relatively well to new data, which is usually the goal 
-	- never want a model that performs well on the data used to train the model but then performs poorly when introduce to new data
