@@ -66,7 +66,7 @@ performance, but perhaps there was something in the testing set that caused the 
 - Tried a few other models such as Probit, similar to Logit function but uses a different link function
 	- on the downside, it would be less interpritable since it does not give the log odds as Logistic Regression does
 - Performed some error analysis to see where the model broke down or see if there were any discernible patterns in the errors made
-- Perhaps would have used R instead of Python since it is easier to look at the model's statistics, ie, BIC score, coefficient p-values, etc (or at least and nice to have)
+- Perhaps would have used R instead of Python since it is easier to look at the model's statistics, ie, BIC score, coefficient p-values, etc (would have been nice to have)
 	- couldn't do in Python since the library statsmodel's Logit model is the only Logistic Regression model which provides such values, but it is not very flexible
 	- it only performs l1 regularization (LASSO) and since I was using elastic net regularization, I could not use the library to create a similar model as Sci-kit Learn's Logit model.
 	- no need to worry about this in R (or at least I am better able to maneuver such problems)
