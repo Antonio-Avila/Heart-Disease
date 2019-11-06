@@ -70,4 +70,4 @@ performance, but perhaps there was something in the testing set that caused the 
 	- couldn't do in Python since the library statsmodel's Logit model is the only Logistic Regression model which provides such values, but it is not very flexible
 	- it only performs l1 regularization (LASSO) and since I was using elastic net regularization, I could not use the library to create a similar model as Sci-kit Learn's Logit model.
 	- no need to worry about this in R (or at least I am better able to maneuver such problems)
-- Model performance changes when introducing new data, in my case for the worse. The same model trained with more data performed worse.
+- Curiously, the same model trained with more data performed worse. One would think more data would improve model performance by reducing variation, but it was not the case for me.
